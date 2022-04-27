@@ -286,7 +286,9 @@ def invert(filename = 'Comp=0.01.pt',image = 'chair.png',size=224,network='alexn
     for i in range(epochs):
         #import pdb;pdb.set_trace()
         acts1 = get_acts(model, x_)
+	## Top-K Sparsification
         #acts = topk(acts_1,comp)
+	## Scalar Quantization
         acts = quantize_scalar(acts1,quant_level = comp)
         #acts = acts1 ## No compression
         #import pdb;pdb.set_trace()
@@ -367,12 +369,16 @@ if __name__ == '__main__':
             else:
                 os.environ['CUDA_VISIBLE_DEVICES'] = '%d' % gpu
        # print(torch.cuda.device_count(), use_mult_gpu, cuda)
+
+
         MSE = np.zeros((1,9))
         #quantization = [4,16,64,256,1024,4096,16384,65536,262144,1048576,4194304,16777216,67108864,1073741824,4294967296]
         quantization = [2,3,4,5,6,7,8,9,10]
         #quantization = [9,10]
         quant_ratio = (1/32)* np.log2(quantization)
         ty_check = 0
+	
+	## Two methods of Quantization used here ##
         if(ty_check):
             ty = "stoch"
         else:
@@ -383,7 +389,7 @@ if __name__ == '__main__':
         
         
         
-        
+        ### Pictures for Inversion are in this folder
         folder = r'/home/arifh/Documents/Research/Image_Inversion/Experiments-Code/Scalar_Q _diff_variance/Pict'
 
         
