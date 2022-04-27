@@ -1,4 +1,13 @@
+##### Project Overview #####
+
+The aim of this project is to show that DP- Compressed VFL is secure against Model Inversion Attack
+
+## Author ##
+Huzaifa Arif
+
+
 # DP-Compressed-VFL-secure-MIA
+
 The main results are obtained from Image Inversion file.Experiments assume that the model was trained on a specific configuration of quantization and variance of noise. Pretrained models not uploaded here due to space limitations.
 
 
