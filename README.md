@@ -1,39 +1,5 @@
-Repo is a private clone of MVCNN-PyTorch extended for
-experiments with Compressed Local BC-SGD.
-
-For specific details, read the original README below.
-Our scripts additionally require that the ModelNet10
-dataset is preprocessed and placed in a folder
-named '10class/classes/'.
-
-One can install our environment with Anaconda:
-    conda env create -f flearn.yml 
-
-Our results are saved as pickle files in the 'results/quant_fix' folder.
-To plot the results in 'quant_fix':
-    python plot_all.py
-    python plot_comm.py
-    python plot_12.py
-    python plot_cifar.py
-    python plot_comm_cifar.py
-This will generate all .png plots, as well as the files
-'results.txt' and 'resultsMB.txt', which contain the
-results seen in Table 2 of the paper.
-
-If you wish to rerun the experiments,
-the script we used to run all experiments sequentially
-can be run as follows:
-    python run_quant.py
-    python run_quant_cifar.py
-This will choose 5 random seeds, run all experiments sequentially,
-and places the results in the current working directory.
-In our experiments, the seeds that were chosen were:
-[707412115,1928644128,16910772,1263880818,1445547577]
-We used a different script (not included) to run all experiments
-in parallel on our internal cluster. It is not included here
-to avoid breaching the blind review process.
-
-Original README:
+# DP-Compressed-VFL-secure-MIA
+The main results are obtained from Image Inversion file. Experiments assume that the model was trained on a specific configuration of quantization and variance of noise. Pretrained models not uploaded here due to space limitations.
 
 # MVCNN-PyTorch
 ## Multi-View CNN built on ResNet/AlexNet to classify 3D objects
